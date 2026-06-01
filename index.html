@@ -50,7 +50,7 @@
     #projects .cell {
       aspect-ratio: 3 / 2; 
       position: relative;
-      overflow: hidden;
+      overflow:visible;
       border-radius: 12px;
       
       background: rgba(255, 255, 255, 0.4);
@@ -80,24 +80,20 @@
       transform-origin: top left;
       /* 원본을 정확히 절반으로 축소하여 카드(300x200) 안에 꽉 채움 */
       transform: scale(0.5); 
+      border-radius: 24px;
     }
     /* 클릭 유도 텍스트 스타일 */
     .click-hint {
       position: absolute;
-      bottom: 30px;
-      right: 30px;
+      bottom: -32px;
+      right: 0px;
       display: flex;
       align-items: center;
       gap: 8px;
       font-size: 1rem;
       font-weight: 700;
-      color: #fff; /* 글자 색상 (흰색) */
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4); /* 글자가 잘 보이도록 그림자 추가 */
-      
-    
-      pointer-events: none; 
-      
-
+      color: #333;
+      pointer-events: none;
       animation: bounce 1.5s infinite ease-in-out;
       z-index: 10;
     }
