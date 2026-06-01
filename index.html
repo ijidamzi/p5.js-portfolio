@@ -81,6 +81,40 @@
       /* 원본을 정확히 절반으로 축소하여 카드(300x200) 안에 꽉 채움 */
       transform: scale(0.5); 
     }
+    /* 클릭 유도 텍스트 스타일 */
+    .click-hint {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff; /* 글자 색상 (흰색) */
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4); /* 글자가 잘 보이도록 그림자 추가 */
+      
+    
+      pointer-events: none; 
+      
+
+      animation: bounce 1.5s infinite ease-in-out;
+      z-index: 10;
+    }
+
+   
+    .click-hint .arrow {
+      font-size: 1.5rem;
+      display: inline-block;
+      transform: rotate(180deg); /* 180도 회전하여 좌상단(↖)을 가리키게 만듦 */
+      margin-right: 4px; /* 글자와 화살표 사이의 간격 살짝 조정 */
+    }
+
+    /* 통통 튀는 애니메이션 (위아래로 움직임) */
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
   </style>
 </head>
 <body>
@@ -99,7 +133,11 @@
     </div>
     <div class="cell">
       <iframe src="sample3/index.html"></iframe>
-    </div>
+      
+      <div class="click-hint">
+        <span class="arrow">⤵</span>
+        <span>클릭해보세요!</span>
+      </div>
   </main>
 
 </body>
