@@ -5,7 +5,7 @@ let saluteOn = false;
 let hatY = -200;
 let hatTargetY = -200;
 let hatOn = false;
-let gifSaved = false;
+//let gifSaved = false;
 
 function setup() {
   createCanvas(600, 400);
@@ -163,10 +163,10 @@ if (frameCount === 290) {
   ellipse(-29, 112, 52, 26);
 
   pop();
-if (!gifSaved) {
-  saveGif("salute", 10);
-  gifSaved = true;
-}
+// if (!gifSaved) {
+//   saveGif("salute", 10);
+//   gifSaved = true;
+// }
 
 }
 function keyPressed() {
