@@ -32,33 +32,32 @@
       font-size: 2.2rem;
       font-weight: 700;
       
-      /* [추가됨 2] 텍스트 그라데이션 효과 (보라색 -> 진한 파란색) */
+      /* 텍스트 그라데이션 효과 (보라색 -> 진한 파란색) */
       background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-shadow: 0px 4px 10px rgba(0,0,0,0.1); /* 글자 뒤에 아주 옅은 그림자 */
     }
 
-    #projects {
+     #projects {
       display: grid;
       grid-template-columns: 1fr 1fr;
       width: 100%;
-      max-width: 800px;
+      max-width: 624px; 
       gap: 24px;
     }
 
     #projects .cell {
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 3 / 2; 
       position: relative;
       overflow: hidden;
       border-radius: 12px;
       
-      /* [추가됨 3] 글래스모피즘 (반투명 유리 효과) 핵심 코드 */
-      background: rgba(255, 255, 255, 0.4); /* 반투명한 흰색 */
-      backdrop-filter: blur(10px); /* 배경 흐리게 만들기 */
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.6); /* 빛을 받는 듯한 흰색 테두리 */
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1); /* 은은하게 퍼지는 그림자 */
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
 
       transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     }
@@ -74,17 +73,19 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 800px;
-      height: 450px;
+      /* 캔버스 원본 크기인 600 x 400으로 맞춤 */
+      width: 600px;
+      height: 400px;
       border: none;
       transform-origin: top left;
-      transform: scale(0.5); /* 800x450 캔버스를 절반으로 축소해서 딱 맞게 배치 */
+      /* 원본을 정확히 절반으로 축소하여 카드(300x200) 안에 꽉 채움 */
+      transform: scale(0.5); 
     }
   </style>
 </head>
 <body>
 
-  <h1>나의 p5.js 작품</h1>
+  <h1>My p5.js Arts</h1>
 
   <main id="projects">
     <div class="cell">
